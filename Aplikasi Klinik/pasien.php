@@ -25,37 +25,43 @@
     </header>
 
     <main class="container">
-        <h2>Data Pasien</h2>
-        <table>
-            <thead>
+        <div style="overflow: auto;">
+            <br />
+            <a href="form_tambah.php">
+                <button>+ Tambah Data Baru</button>
+            </a>
+
+            <table border="1" class="table">
                 <tr>
+                    <th>No</th>
+                    <th>No Pasien</th>
                     <th>Nama Pasien</th>
-                    <th>Usia</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
+                    <th>No Telp</th>
+                    <th>Aksi</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ali</td>
-                    <td>30</td>
-                    <td>Laki-laki</td>
-                    <td>Jl. Melati No. 10</td>
-                </tr>
-                <tr>
-                    <td>Siti</td>
-                    <td> 25</td>
-                    <td>Perempuan</td>
-                    <td>Jl. Mawar No. 20</td>
-                </tr>
-                <tr>
-                    <td>Budi</td>
-                    <td>40</td>
-                    <td>Laki-laki</td>
-                    <td>Jl. Anggrek No. 30</td>
-                </tr>
-            </tbody>
-        </table>
+                <?php
+                include "koneksi.php";
+                $query = mysqli_query($koneksi, "SELECT * FROM pasien") or die(mysqli_error($koneksi));
+                $nomor = 1;
+                while ($data = mysqli_fetch_array($query)) { ?>
+                    <tr>
+                        <td align="center"><?php echo $nomor++; ?>.</td>
+                        <td><?php echo $data['no_pasien']; ?></td>
+                        <td><?php echo $data['nama_pasien']; ?></td>
+                        <td><?php echo $data['jk']; ?></td>
+                        <td><?php echo $data['alamat']; ?></td>
+                        <td><?php echo $data['no_telp']; ?></td>
+                        <td width="90px" align="center">
+                            <a href="form_edit.php?no_pasien=<?php echo $data['no_pasien']; ?>"><button>Edit</button></a>
+                            <a href="proses_hapus.php?no_pasien=<?php echo $data['no_pasien']; ?>" onclick="return confirm('Yakin hapus data?')"><button>Hapus</button></a>
+                        </td>
+                    </tr>
+                <?php
+                } ?>
+            </table>
+        </div>
     </main>
 
     <footer>
