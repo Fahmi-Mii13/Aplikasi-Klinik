@@ -1,7 +1,7 @@
 ![doge](https://github.com/user-attachments/assets/caa92c18-a642-4c83-b7f0-204a58093142)
 
-Tugas membuat aplikasi PHP dalam mata kuliah Sistem Informasi Kesehatan, bertemakan Aplikasi Manajemen Klinik atau Rumah Sakit. 
-Aplikasi ini bertujuan untuk mendigitalisasi dan mempermudah pengelolaan data di klinik atau rumah sakit, termasuk data pasien, jadwal dokter, rekam medis, administrasi, dan layanan kesehatan lainnya.
+Tugas ini adalah membuat aplikasi berbasis PHP untuk mata kuliah Sistem Informasi Kesehatan dengan tema Aplikasi Manajemen Klinik atau Rumah Sakit.
+Aplikasi ini dirancang untuk mempermudah pekerjaan sehari-hari di klinik atau rumah sakit, seperti mengelola data pasien, mengatur jadwal dokter, dan mencatat rekam medis.
 
 Aplikasi ini diharapkan memiliki fitur-fitur utama seperti:
 
