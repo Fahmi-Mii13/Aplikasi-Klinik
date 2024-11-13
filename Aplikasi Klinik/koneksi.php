@@ -10,7 +10,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$database = "login";
+$database = "klinik";
  
 $koneksi = mysqli_connect($server, $user, $pass, $database);
  
