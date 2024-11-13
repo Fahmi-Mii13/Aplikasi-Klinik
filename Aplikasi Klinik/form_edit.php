@@ -30,9 +30,10 @@
 		?>
 		<table>
 			<tr>
-				<td></td>
-				<td>
-					<h3>Edit Pasien</h3>
+				<td colspan="2">
+					<center>
+						<h3>Edit Pasien</h3>
+					</center>
 				</td>
 			</tr>
 

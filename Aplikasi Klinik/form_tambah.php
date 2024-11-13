@@ -23,9 +23,10 @@
 	<form action="proses_tambah.php" method="post">
 		<table>
 			<tr>
-				<td></td>
-				<td>
-					<h3>Tambah Pasien</h3>
+				<td colspan="2">
+					<center>
+						<h3>Tambah Pasien</h3>
+					</center>
 				</td>
 			</tr>
 			<tr>
