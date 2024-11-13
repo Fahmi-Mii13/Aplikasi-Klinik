@@ -19,14 +19,18 @@
                     <li><a href="pasien.php">Data Pasien</a></li>
                     <li><a href="rmedis.php">Rekam Medis</a></li>
                     <li><a href="kontak.php">Kontak</a></li>
-                    <a style="text-decoration:none;color: #ff0000;font-weight: bold;" href="logout.php" class="logout">Logout</a>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container">
+     
         <h2>Rekam Medis</h2>
+        <br>
+    <a href="form_tambah_rek.php">
+                <button>+ Tambah Data Baru</button>
+            </a>
         <table>
             <thead>
                 <tr>
@@ -35,30 +39,39 @@
                     <th>Keluhan</th>
                     <th>Diagnosis</th>
                     <th>Terapi</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Ali</td>
-                    <td>2023-02-10</td>
-                    <td>Sakit kepala</td>
-                    <td>Migrain</td>
-                    <td>Obat sakit kepala</td>
-                </tr>
-                <tr>
-                    <td>Siti</td>
-                    <td>2023-02-15</td>
-                    <td>Sakit perut</td>
-                    <td>Gastritis</td>
-                    <td>Obat sakit perut</td>
-                </tr>
-                <tr>
-                    <td>Budi</td>
-                    <td>2023-02-20</td>
-                    <td>Sakit gigi</td>
-                    <td>Karies</td>
-                    <td>Perawatan gigi</td>
-                </tr>
+                <?php
+             include 'koneksi.php';
+
+                // Mengambil data dari tabel rekam medis
+                $sql = "SELECT nama_pasien, tgl_kunjung, keluhan, diagnosis, terapi FROM rkmedis";
+                $result = $koneksi->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // Menampilkan data setiap baris
+                    while($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["nama_pasien"] . "</td>";
+                        echo "<td>" . $row["tgl_kunjung"] . "</td>";
+                        echo "<td>" . $row["keluhan"] . "</td>";
+                        echo "<td>" . $row["diagnosis"] . "</td>";
+                        echo "<td>" . $row["terapi"] . "</td>";
+                        echo "<td width='90px' align='center'>";
+                        echo "<a href='form_edit_rek.php?nama_pasien=" . $row['nama_pasien'] . "'><button>Edit</button></a> ";
+                        echo "<a href='proses_hapus_rek.php?nama_pasien=" . $row['nama_pasien'] . "' onclick='return confirm(\"Yakin hapus data?\")'><button>Hapus</button></a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>Tidak ada data rekam medis</td></tr>";
+                }
+
+                // Menutup koneksi
+                $koneksi->close();
+                ?>
             </tbody>
         </table>
     </main>
