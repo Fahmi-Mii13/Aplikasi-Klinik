@@ -2,9 +2,8 @@
 <html>
 
 <head>
-	<title>Edit Kendaraan | Web Pendataan</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href='https://yukcoding.blogspot.com/favicon.ico' rel='icon' type='image/x-icon' />
+	<title>Edit Pasien | Web Klinik 08</title>
+	<link rel="stylesheet" href="css/form.css">
 </head>
 
 <body>
@@ -12,14 +11,17 @@
 		<h2>Edit Pasien</h2>
 	</div>
 
-	<br />
-	<a href="pasien.php">
-		<button>
-			< Lihat Semua Data</button>
-	</a>
+	<center>
+		<br />
+		<a href="pasien.php">
+			<button>
+				< Lihat Semua Data</button>
+		</a>
+	</center>
 
-	<h3>Edit pasien</h3>
+
 	<form action="proses_edit.php" method="post">
+
 		<?php
 		include "koneksi.php";
 		$no_pasien = $_GET['no_pasien'];
@@ -27,6 +29,13 @@
 		$data = mysqli_fetch_array($query);
 		?>
 		<table>
+			<tr>
+				<td></td>
+				<td>
+						<h3>Edit Pasien</h3>
+				</td>
+			</tr>
+
 			<tr>
 				<td>No Pasien</td>
 				<td><input type="text" name="no_pasien" value="<?php echo $data['no_pasien'] ?>" required></td>

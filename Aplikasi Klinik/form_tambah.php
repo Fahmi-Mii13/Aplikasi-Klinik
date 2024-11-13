@@ -2,24 +2,32 @@
 <html>
 
 <head>
-	<title>Tambah Kendaraan | Web Pendataan</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Tambah Pasien | Web Klinik 08</title>
+	<link rel="stylesheet" href="css/form.css">
 </head>
 
 <body>
 	<div class="judul">
-		<h2></h2>Form tambah pasien</h2>
+		<h2>Tambah Pasien</h2>
 	</div>
 
-	<br />
-	<a href="pasien.php">
-		<button>
-			< Lihat Semua Data</button>
-	</a>
+	<center>
+		<br />
+		<a href="pasien.php">
+			<button>
+				< Lihat Semua Data</button>
+		</a>
+	</center>
 
-	<h3>Input Pasien Baru</h3>
+
 	<form action="proses_tambah.php" method="post">
 		<table>
+			<tr>
+				<td></td>
+				<td>
+					<h3>Tambah Pasien</h3>
+				</td>
+			</tr>
 			<tr>
 				<td>No Pasien</td>
 				<td><input type="text" name="no_pasien" required></td>

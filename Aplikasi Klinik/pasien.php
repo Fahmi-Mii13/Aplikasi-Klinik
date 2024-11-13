@@ -27,40 +27,41 @@
     <main class="container">
         <div style="overflow: auto;">
             <br />
-            <a href="form_tambah.php">
-                <button>+ Tambah Data Baru</button>
-            </a>
+            <a href="form_tambah.php" class="button">Tambah Data Baru </a>
 
-            <table border="1" class="table">
-                <tr>
-                    <th>No</th>
-                    <th>No Pasien</th>
-                    <th>Nama Pasien</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Alamat</th>
-                    <th>No Telp</th>
-                    <th>Aksi</th>
-                </tr>
-                <?php
-                include "koneksi.php";
-                $query = mysqli_query($koneksi, "SELECT * FROM pasien") or die(mysqli_error($koneksi));
-                $nomor = 1;
-                while ($data = mysqli_fetch_array($query)) { ?>
-                    <tr>
-                        <td align="center"><?php echo $nomor++; ?>.</td>
-                        <td><?php echo $data['no_pasien']; ?></td>
-                        <td><?php echo $data['nama_pasien']; ?></td>
-                        <td><?php echo $data['jk']; ?></td>
-                        <td><?php echo $data['alamat']; ?></td>
-                        <td><?php echo $data['no_telp']; ?></td>
-                        <td width="90px" align="center">
-                            <a href="form_edit.php?no_pasien=<?php echo $data['no_pasien']; ?>"><button>Edit</button></a>
-                            <a href="proses_hapus.php?no_pasien=<?php echo $data['no_pasien']; ?>" onclick="return confirm('Yakin hapus data?')"><button>Hapus</button></a>
-                        </td>
-                    </tr>
-                <?php
-                } ?>
-            </table>
+
+                <table border="1" class="table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>No Pasien</th>
+                            <th>Nama Pasien</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Alamat</th>
+                            <th>No Telp</th>
+                            <th>Aksi</th>
+                        </tr>
+                        <?php
+                        include "koneksi.php";
+                        $query = mysqli_query($koneksi, "SELECT * FROM pasien") or die(mysqli_error($koneksi));
+                        $nomor = 1;
+                        while ($data = mysqli_fetch_array($query)) { ?>
+                            <tr>
+                                <td align="center"><?php echo $nomor++; ?>.</td>
+                                <td><?php echo $data['no_pasien']; ?></td>
+                                <td><?php echo $data['nama_pasien']; ?></td>
+                                <td><?php echo $data['jk']; ?></td>
+                                <td><?php echo $data['alamat']; ?></td>
+                                <td><?php echo $data['no_telp']; ?></td>
+                                <td width="90px" align="center">
+                                    <a href="form_edit.php?no_pasien=<?php echo $data['no_pasien']; ?>" class="button">Edit</a>
+                                    <p></p>
+                                    <a href="proses_hapus.php?no_pasien=<?php echo $data['no_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button">Hapus</a>
+                                </td>
+                            </tr>
+                        <?php
+                        } ?>
+                </table>
         </div>
     </main>
 
