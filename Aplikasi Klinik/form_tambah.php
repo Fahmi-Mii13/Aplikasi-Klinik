@@ -38,11 +38,16 @@
 			</tr>
 			<tr>
 				<td>Jenis Kelamin</td>
-				<td><input type="text" name="jk" required></td>
+				<td><input type="radio" name="jk" value="Laki-laki" required>
+					<label for="alamat">Laki-laki</label><br>
+					<input type="radio" name="jk" value="Perempuan" required>
+					<label for="alamat">Perempuan</label><br>
+				</td>
 			</tr>
 			<tr>
 				<td>Alamat</td>
-				<td><input type="text" name="alamat" required></td>
+				<td><input type="text" name="alamat" required>
+				</td>
 			</tr>
 			<tr>
 				<td>No Telp</td>

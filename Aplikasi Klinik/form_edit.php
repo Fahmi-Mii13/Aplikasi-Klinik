@@ -32,7 +32,7 @@
 			<tr>
 				<td></td>
 				<td>
-						<h3>Edit Pasien</h3>
+					<h3>Edit Pasien</h3>
 				</td>
 			</tr>
 
@@ -46,7 +46,11 @@
 			</tr>
 			<tr>
 				<td>Jenis Kelamin</td>
-				<td><input type="text" name="jk" value="<?php echo $data['jk'] ?>" required></td>
+				<td><input type="radio" name="jk" value="Laki-laki" required>
+					<label for="alamat">Laki-laki</label><br>
+					<input type="radio" name="jk" value="Perempuan" required>
+					<label for="alamat">Perempuan</label><br>
+				</td>
 			</tr>
 			<tr>
 				<td>Alamat</td>
@@ -64,4 +68,3 @@
 </body>
 
 </html>
-
