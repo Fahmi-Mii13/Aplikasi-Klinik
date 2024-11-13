@@ -26,8 +26,8 @@
     </header>
 
     <main class="container">
+        <h2>Data Pasien</h2>
         <div style="overflow: auto;">
-            <br />
             <a href="form_tambah.php" class="button">Tambah Data Baru </a>
 
 
