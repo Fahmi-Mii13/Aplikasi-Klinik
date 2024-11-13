@@ -15,19 +15,7 @@ if (!isset($_SESSION['username'])) {
     echo "<script>window.location.replace('Masuk.php')</script>";
 }
 
-// Koneksi ke database
-$server = "localhost";
-$user = "root";
-$pass = "";
-$database = "login";
-
-$koneksi = mysqli_connect($server, $user, $pass, $database);
-
-// Cek koneksi
-if (!$koneksi) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-}
-
+include 'koneksi.php';
 // Ambil data pengguna
 $username = $_SESSION['username'];
 $query = "SELECT * FROM user WHERE username = '$username'"; // Ganti 'users' dengan nama tabel yang sesuai
