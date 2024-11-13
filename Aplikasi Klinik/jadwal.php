@@ -19,6 +19,7 @@
                     <li><a href="pasien.php">Data Pasien</a></li>
                     <li><a href="rmedis.php">Rekam Medis</a></li>
                     <li><a href="kontak.php">Kontak</a></li>
+                    <a style="text-decoration:none;color: #ff0000;font-weight: bold;" href="logout.php" class="logout">Logout</a>
                 </ul>
             </nav>
         </div>

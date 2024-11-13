@@ -6,6 +6,9 @@
     <title>Beranda</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+    </style>
 </head>
 
 <?php
@@ -14,14 +17,12 @@ if (!isset($_SESSION['username'])) {
     echo "<script>alert('Harap Login terlebih dahulu!')</script>";
     echo "<script>window.location.replace('Masuk.php')</script>";
 }
-
 include 'koneksi.php';
-// Ambil data pengguna
+
 $username = $_SESSION['username'];
 $query = "SELECT * FROM user WHERE username = '$username'"; // Ganti 'users' dengan nama tabel yang sesuai
 $result = mysqli_query($koneksi, $query);
 
-// Cek apakah query berhasil
 if (!$result) {
     die("Query gagal: " . mysqli_error($koneksi));
 }
@@ -40,15 +41,19 @@ $userData = mysqli_fetch_assoc($result);
                     <li><a href="pasien.php">Data Pasien</a></li>
                     <li><a href="rmedis.php">Rekam Medis</a></li>
                     <li><a href="kontak.php">Kontak</a></li>
+                    <a style="text-decoration:none;color: #ff0000;font-weight: bold;" href="logout.php" class="logout">Logout</a>
                 </ul>
+
             </nav>
-            <div class="profile">
-                <span>Welcome, <?php echo htmlspecialchars($userData['username']); ?></span> <!-- Ganti 'name' dengan kolom yang sesuai -->
-                <a href="logout.php" class="logout">Logout</a>
-            </div>
+
         </div>
     </header>
+    <center>
+        <div class="profile">
+            <h2><span>Selamat Datang, <?php echo ($userData['username']), "!"; ?></span></h2>
 
+        </div>
+    </center>
     <main class="container">
         <section class="info">
             <h2>Informasi Klinik</h2>

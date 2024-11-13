@@ -10,8 +10,3 @@ if($query) {
     echo "<script>alert('Data gagal dihapus'); window.location='index.php';</script>";
 }
 
-/*
-Code by YukCoding Tutor
-www.yukcoding.id
-*/
-?>

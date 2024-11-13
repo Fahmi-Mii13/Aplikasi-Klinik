@@ -15,8 +15,3 @@ if($query) {
     echo "<script>alert('Data gagal ditambahkan');</script>";
 }
 
-/*
-Code by YukCoding Tutor
-www.yukcoding.id
-*/
-?>

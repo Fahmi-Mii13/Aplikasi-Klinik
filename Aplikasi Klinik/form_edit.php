@@ -65,7 +65,3 @@
 
 </html>
 
-<!--
-Code by YukCoding Tutor
-www.yukcoding.id
--->
