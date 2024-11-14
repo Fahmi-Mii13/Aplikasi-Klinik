@@ -14,3 +14,8 @@ Tujuan dari aplikasi ini adalah untuk meningkatkan efisiensi dan akurasi dalam p
 Aplikasi ini akan dikembangkan menggunakan teknologi berbasis web dengan PHP sebagai bahasa pemrograman utama dan MySQL sebagai sistem basis data.
 
 Melalui proyek ini, diharapkan mahasiswa mampu memahami penerapan sistem informasi dalam lingkungan kesehatan dan membangun aplikasi yang relevan dengan kebutuhan di lapangan.
+
+
+=====CARA INSTALASI=====
+1.Instal / Clone Terlebih Dahulu Aplikasi Kliniknya
+2.Buat Database *klinik* di XAMPP lalu import File sql yang ada 
