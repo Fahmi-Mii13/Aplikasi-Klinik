@@ -20,3 +20,4 @@ Melalui proyek ini, diharapkan mahasiswa mampu memahami penerapan sistem informa
 
 	1.Download / Clone Terlebih Dahulu Aplikasi Kliniknya
 	2.Buat Database *klinik* di XAMPP lalu import File sql yang ada (Login rev1 -> rkmedis)
+	3.Buka menggunakan localhost ✅
