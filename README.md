@@ -16,6 +16,7 @@ Aplikasi ini akan dikembangkan menggunakan teknologi berbasis web dengan PHP seb
 Melalui proyek ini, diharapkan mahasiswa mampu memahami penerapan sistem informasi dalam lingkungan kesehatan dan membangun aplikasi yang relevan dengan kebutuhan di lapangan.
 
 
-=====CARA INSTALASI=====
-	1.Instal / Clone Terlebih Dahulu Aplikasi Kliniknya
+=============================CARA INSTALASI===================================
+
+	1.Download / Clone Terlebih Dahulu Aplikasi Kliniknya
 	2.Buat Database *klinik* di XAMPP lalu import File sql yang ada 
