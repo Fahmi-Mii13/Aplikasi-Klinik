@@ -14,7 +14,7 @@
             <h1>Klinik Simpel</h1>
             <nav>
                 <ul>
-                    <li><a href="beranda.php">Beranda</a></li>
+                    <li><a href="Beranda.php">Beranda</a></li>
                     <li><a href="jadwal.php">Jadwal Dokter</a></li>
                     <li><a href="pasien.php">Data Pasien</a></li>
                     <li><a href="rmedis.php">Rekam Medis</a></li>
@@ -56,7 +56,6 @@
                             <td><?php echo $data['no_telp']; ?></td>
                             <td width="90px" align="center">
                                 <a href="form_edit.php?no_pasien=<?php echo $data['no_pasien']; ?>" class="button">Edit</a>
-                                <p></p>
                                 <a href="proses_hapus.php?no_pasien=<?php echo $data['no_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button">Hapus</a>
                             </td>
                         </tr>

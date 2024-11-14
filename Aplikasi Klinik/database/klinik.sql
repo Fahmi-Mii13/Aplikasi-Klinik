@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2024 at 12:33 PM
+-- Generation Time: Nov 14, 2024 at 05:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.23
 
@@ -40,7 +40,29 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`no_pasien`, `nama_pasien`, `jk`, `alamat`, `no_telp`) VALUES
-('2345', 'Fahmi', 'Laki-laki', 'Ciracas', '0989876543');
+('2345', 'Fahmi', 'Laki-laki', 'Ciracas', '0989876543'),
+('4321', 'Budiman', 'Laki-laki', 'Jakarta', '123456789');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rkmedis`
+--
+
+CREATE TABLE `rkmedis` (
+  `nama_pasien` varchar(50) NOT NULL,
+  `tgl_kunjung` date NOT NULL,
+  `keluhan` varchar(50) NOT NULL,
+  `diagnosis` varchar(50) NOT NULL,
+  `terapi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rkmedis`
+--
+
+INSERT INTO `rkmedis` (`nama_pasien`, `tgl_kunjung`, `keluhan`, `diagnosis`, `terapi`) VALUES
+('tio', '2024-11-13', 'batuk', 'batuk keluar permen', 'minum ');
 
 -- --------------------------------------------------------
 
