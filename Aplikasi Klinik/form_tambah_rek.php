@@ -2,13 +2,13 @@
 <html>
 
 <head>
-	<title>Edit Pasien | Web Klinik 08</title>
+	<title>Tambah Rekam Medis | Web Klinik 08</title>
 	<link rel="stylesheet" href="css/form.css">
 </head>
 
 <body>
 	<div class="judul">
-		<h2>Edit Rekam Medis</h2>
+		<h2>Tambah Rekam Medis</h2>
 	</div>
 
 	<center>
@@ -30,7 +30,7 @@
 			<tr>
 				<td></td>
 				<td>
-						<h3>Edit Rekam Medis</h3>
+						<h3>Tambah Rekam Medis</h3>
 				</td>
 			</tr>
 
@@ -62,8 +62,3 @@
 </body>
 
 </html>
-
-<!--
-Code by YukCoding Tutor
-www.yukcoding.id
--->
