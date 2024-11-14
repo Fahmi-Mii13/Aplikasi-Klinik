@@ -1,7 +1,6 @@
 <?php 
 include 'koneksi.php';
 
-// $id = $_POST['id'];
 $nama_pasien = $_POST['nama_pasien'];
 $tgl_kunjung = $_POST['tgl_kunjung'];
 $keluhan = $_POST['keluhan'];
@@ -16,8 +15,4 @@ if($query) {
     echo "<script>alert('Data gagal diedit');</script>";
 }
 
-/*
-Code by YukCoding Tutor
-www.yukcoding.id
-*/
 ?>
