@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Edit Pasien | Web Klinik 08</title>
+	<title>Edit Rekam Medis | Web Klinik 08</title>
 	<link rel="stylesheet" href="css/form.css">
 </head>
 
@@ -64,8 +64,3 @@
 </body>
 
 </html>
-
-<!--
-Code by YukCoding Tutor
-www.yukcoding.id
--->
