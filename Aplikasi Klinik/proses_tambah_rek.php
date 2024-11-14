@@ -15,8 +15,4 @@ if($query) {
     echo "<script>alert('Data gagal diedit');</script>";
 }
 
-/*
-Code by YukCoding Tutor
-www.yukcoding.id
-*/
 ?>
