@@ -17,5 +17,5 @@ Melalui proyek ini, diharapkan mahasiswa mampu memahami penerapan sistem informa
 
 
 =====CARA INSTALASI=====
-1.Instal / Clone Terlebih Dahulu Aplikasi Kliniknya
-2.Buat Database *klinik* di XAMPP lalu import File sql yang ada 
+	1.Instal / Clone Terlebih Dahulu Aplikasi Kliniknya
+	2.Buat Database *klinik* di XAMPP lalu import File sql yang ada 
