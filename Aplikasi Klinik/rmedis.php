@@ -33,8 +33,10 @@
             <table border="1" class="table">
                 <thead>
                     <tr>
+                        <th>No Rekam</th>
                         <th>Nama Pasien</th>
                         <th>Tanggal Kunjungan</th>
+                        <th>Nama Dokter</th>
                         <th>Keluhan</th>
                         <th>Diagnosis</th>
                         <th>Terapi</th>
@@ -46,15 +48,17 @@
                     include 'koneksi.php';
 
 
-                    $sql = "SELECT nama_pasien, tgl_kunjung, keluhan, diagnosis, terapi FROM rkmedis";
+                    $sql = "SELECT * FROM rkmedis";
                     $result = $koneksi->query($sql);
 
                     if ($result->num_rows > 0) {
 
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
+                            echo "<td>" . $row["no_rek"] . "</td>";
                             echo "<td>" . $row["nama_pasien"] . "</td>";
                             echo "<td>" . $row["tgl_kunjung"] . "</td>";
+                            echo "<td>" . $row["nama_dokter"] . "</td>";
                             echo "<td>" . $row["keluhan"] . "</td>";
                             echo "<td>" . $row["diagnosis"] . "</td>";
                             echo "<td>" . $row["terapi"] . "</td>";

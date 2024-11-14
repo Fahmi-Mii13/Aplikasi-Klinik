@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2024 at 05:10 AM
+-- Generation Time: Nov 14, 2024 at 03:57 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.23
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `klinik`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dokter`
+--
+
+CREATE TABLE `dokter` (
+  `no_dokter` varchar(20) NOT NULL,
+  `nama_dokter` varchar(20) NOT NULL,
+  `spesialis` varchar(20) NOT NULL,
+  `alamat` varchar(20) NOT NULL,
+  `no_telp` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dokter`
+--
+
+INSERT INTO `dokter` (`no_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_telp`) VALUES
+('1', 'Siti', 'Penyakit Dalam', 'Jakarta', '2331414141');
 
 -- --------------------------------------------------------
 
@@ -50,8 +71,10 @@ INSERT INTO `pasien` (`no_pasien`, `nama_pasien`, `jk`, `alamat`, `no_telp`) VAL
 --
 
 CREATE TABLE `rkmedis` (
+  `no_rek` varchar(20) NOT NULL,
   `nama_pasien` varchar(50) NOT NULL,
   `tgl_kunjung` date NOT NULL,
+  `nama_dokter` varchar(20) NOT NULL,
   `keluhan` varchar(50) NOT NULL,
   `diagnosis` varchar(50) NOT NULL,
   `terapi` varchar(50) NOT NULL
@@ -61,8 +84,8 @@ CREATE TABLE `rkmedis` (
 -- Dumping data for table `rkmedis`
 --
 
-INSERT INTO `rkmedis` (`nama_pasien`, `tgl_kunjung`, `keluhan`, `diagnosis`, `terapi`) VALUES
-('tio', '2024-11-13', 'batuk', 'batuk keluar permen', 'minum ');
+INSERT INTO `rkmedis` (`no_rek`, `nama_pasien`, `tgl_kunjung`, `nama_dokter`, `keluhan`, `diagnosis`, `terapi`) VALUES
+('123', 'Fahmi', '2024-11-08', 'Siti', 'Sakit', 'Sakit', 'Sakit');
 
 -- --------------------------------------------------------
 
@@ -90,16 +113,44 @@ INSERT INTO `user` (`username`, `password`, `hak_akses`, `aktif`) VALUES
 --
 
 --
+-- Indexes for table `dokter`
+--
+ALTER TABLE `dokter`
+  ADD PRIMARY KEY (`no_dokter`),
+  ADD UNIQUE KEY `nama_dokter` (`nama_dokter`);
+
+--
 -- Indexes for table `pasien`
 --
 ALTER TABLE `pasien`
-  ADD PRIMARY KEY (`no_pasien`);
+  ADD PRIMARY KEY (`no_pasien`),
+  ADD UNIQUE KEY `nama_pasien` (`nama_pasien`);
+
+--
+-- Indexes for table `rkmedis`
+--
+ALTER TABLE `rkmedis`
+  ADD PRIMARY KEY (`no_rek`),
+  ADD UNIQUE KEY `no_dokter` (`nama_dokter`),
+  ADD UNIQUE KEY `nama_dokter` (`nama_dokter`),
+  ADD KEY `k_pasien` (`nama_pasien`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `rkmedis`
+--
+ALTER TABLE `rkmedis`
+  ADD CONSTRAINT `k_dokter` FOREIGN KEY (`nama_dokter`) REFERENCES `dokter` (`nama_dokter`),
+  ADD CONSTRAINT `k_pasien` FOREIGN KEY (`nama_pasien`) REFERENCES `pasien` (`nama_pasien`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
