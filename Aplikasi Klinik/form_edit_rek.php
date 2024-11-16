@@ -84,7 +84,7 @@
 			<tr>
 			<tr>
 				<td>Keluhan</td>
-				<td><input type=" text" name="keluhan" value="<?php echo $data['keluhan'] ?>" required>
+				<td><input type="text" name="keluhan" value="<?php echo $data['keluhan'] ?>" required>
 				</td>
 			</tr>
 			<tr>

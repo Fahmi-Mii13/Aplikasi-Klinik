@@ -66,7 +66,7 @@
 			<tr>
 				<td>Nama Dokter</td>
 				<td>
-					<select name="nama_dokter" required>
+					<select name="nama_dokter" class="selectt" required>
 						<option value="">Pilih Nama Dokter</option>
 						<?php
 						if ($result2->num_rows > 0) {
