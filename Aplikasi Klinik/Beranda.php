@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Beranda</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styleberanda.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
 
@@ -43,7 +43,7 @@ $userData = mysqli_fetch_assoc($result);
                         <li><a href="pasien.php">Data Pasien</a></li>
                         <li><a href="rmedis.php">Rekam Medis</a></li>
                         <li><a href="kontak.php">Kontak</a></li>
-                        
+                        <li><a style="text-decoration:none;color: #ff0000;font-weight: bold;" href="logout.php" class="logout">Logout</a></li>
                     </ul>
                 </nav>
             </div>
@@ -56,9 +56,73 @@ $userData = mysqli_fetch_assoc($result);
     </div>
 
     <main class="container">
-        <section class="info">
-            <h2>Informasi Klinik</h2>
-            <p>Klinik Simpel menyediakan layanan kesehatan terbaik untuk Anda dan keluarga. Kami memiliki dokter yang berpengalaman dan fasilitas yang memadai.</p>
+        <section>
+            <div>
+                <div>
+                    <div>
+                        <h2>
+                            Spesialisasi Medis
+                        </h2>
+                        <p>
+                            Berbagai pilihan spesialisasi dokter
+                        </p>
+                    </div>
+                </div>
+                <div class="specializations">
+                    <div class="specialization">
+                        <img alt="Icon of Sp. Kandungan &amp; Kebidanan" height="60" src="image/Dokter.png" width="60" />
+                        <p>
+                            Sp. Kandungan &amp; Kebidanan
+                        </p>
+                    </div>
+                    <div class="specialization">
+                        <img alt="Icon of Sp. Kulit &amp; Kelamin" height="60" src="image/Dokter.png" width=" 60" />
+                        <p>
+                            Sp. Kulit &amp; Kelamin
+                        </p>
+                    </div>
+                    <div class="specialization">
+                        <img alt="Icon of Sp. THT" height="60" src="image/Dokter.png" width="60" />
+                        <p>
+                            Sp. THT
+                        </p>
+                    </div>
+                    <div class="specialization">
+                        <img alt="Icon of Sp. Jiwa" height="60" src="image/Dokter.png" width="60" />
+                        <p>
+                            Sp. Jiwa
+                        </p>
+                    </div>
+                    <div class="specialization">
+                        <img alt="Icon of Sp. Penyakit Dalam" height="60" src="image/Dokter.png" width="60" />
+                        <p>
+                            Sp. Penyakit Dalam
+                        </p>
+                    </div>
+                    <div class="specialization">
+                        <img alt="Icon of Sp. Anak" height="60" src="image/Dokter.png" width="60" />
+                        <p>
+                            Sp. Anak
+                        </p>
+                    </div>
+                    <div class="specialization">
+                        <img alt="Icon of Sp. Mata" height="60" src="image/Dokter.png" width="60" />
+                        <p>
+                            Sp. Mata
+                        </p>
+                    </div>
+                    <div class="specialization">
+                        <img alt="Icon of Dokter Gigi" height="60" src="image/Dokter.png" width="60" />
+                        <p>
+                            Dokter Gigi
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <a href="#" class="lihatsemua">
+                    Lihat Semua
+                </a>
+            </div>
         </section>
 
         <section class="services">

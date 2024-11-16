@@ -9,6 +9,27 @@ body {
     background-color: #f4f4f4;
 }
 
+.selectt {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.selectt:hover {
+    border-color: #007bff;
+}
+
+.selectt:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .container {
     width: 90%;
     max-width: 1200px;

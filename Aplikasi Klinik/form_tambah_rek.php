@@ -24,31 +24,69 @@
 
 		<?php
 		include "koneksi.php";
-		
+		$query = "SELECT nama_pasien FROM pasien";
+		$query2 = "SELECT nama_dokter FROM dokter";
+		$result = $koneksi->query($query);
+		$result2 = $koneksi->query($query2);
 		?>
 		<table>
 			<tr>
-				<td></td>
-				<td>
+				<td colspan="2">
+					<center>
 						<h3>Tambah Rekam Medis</h3>
+					</center>
 				</td>
 			</tr>
 
 			<tr>
-				<td>Nama Pasien</td>
-				<td><input type="text" name="nama_pasien" required></td>
+			<tr>
+				<td>No Rekam</td>
+				<td><input type="text" name="no_rek" required></td>
+			</tr>
+			<td>Nama Pasien</td>
+			<td>
+				<select name="nama_pasien" class="selectt" required>
+					<option value="">Pilih Nama Pasien</option>
+					<?php
+					if ($result->num_rows > 0) {
+						while ($row = $result->fetch_assoc()) {
+							echo "<option value='" . $row['nama_pasien'] . "' $selected>" . htmlspecialchars($row['nama_pasien']) . "</option>";
+						}
+					} else {
+						echo "<option value=''>Tidak ada data pasien</option>";
+					}
+					?>
+				</select>
+			</td>
 			</tr>
 			<tr>
 				<td>Tanggal Kunjungan</td>
 				<td><input type="date" name="tgl_kunjung" required></td>
 			</tr>
 			<tr>
+				<td>Nama Dokter</td>
+				<td>
+					<select name="nama_dokter" required>
+						<option value="">Pilih Nama Dokter</option>
+						<?php
+						if ($result2->num_rows > 0) {
+							while ($row = $result2->fetch_assoc()) {
+								echo "<option value='" . $row['nama_dokter'] . "' $selected>" . htmlspecialchars($row['nama_dokter']) . "</option>";
+							}
+						} else {
+							echo "<option value=''>Tidak ada data Dokter</option>";
+						}
+						?>
+					</select>
+				</td>
+			</tr>
+			<tr>
 				<td>Keluhan</td>
-				<td><input type="text" name="keluhan"  required></td>
+				<td><input type="text" name="keluhan" required></td>
 			</tr>
 			<tr>
 				<td>Diagnosis</td>
-				<td><input type="text" name="diagnosis"  required></td>
+				<td><input type="text" name="diagnosis" required></td>
 			</tr>
 			<tr>
 				<td>Terapi</td>
