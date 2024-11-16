@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2024 at 03:57 PM
+-- Generation Time: Nov 16, 2024 at 11:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.23
 
@@ -40,7 +40,8 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`no_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_telp`) VALUES
-('1', 'Siti', 'Penyakit Dalam', 'Jakarta', '2331414141');
+('1', 'Siti Khofinah', 'Penyakit Dalam', 'Jakarta', '2331414141'),
+('2', 'Kevin Risky Setiawan', 'Penyakit Dalam', 'Ciracas', '0987263343');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,7 @@ CREATE TABLE `rkmedis` (
 --
 
 INSERT INTO `rkmedis` (`no_rek`, `nama_pasien`, `tgl_kunjung`, `nama_dokter`, `keluhan`, `diagnosis`, `terapi`) VALUES
-('123', 'Fahmi', '2024-11-08', 'Siti', 'Sakit', 'Sakit', 'Sakit');
+('123', 'Fahmi', '2024-11-08', 'Kevin Risky Setiawan', 'Sakit', 'Sakit', 'Sakit');
 
 -- --------------------------------------------------------
 
