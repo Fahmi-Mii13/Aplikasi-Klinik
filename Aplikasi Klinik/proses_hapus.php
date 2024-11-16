@@ -7,6 +7,6 @@ $query = mysqli_query($koneksi, "DELETE FROM pasien WHERE no_pasien = '$no_pasie
 if($query) {
     echo "<script>alert('Data berhasil dihapus!'); window.location='pasien.php';</script>";
 } else {
-    echo "<script>alert('Data gagal dihapus'); window.location='index.php';</script>";
+    echo "<script>alert('Data gagal dihapus'); window.location='pasien.php';</script>";
 }
 

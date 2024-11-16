@@ -7,7 +7,7 @@ $query = mysqli_query($koneksi, "DELETE FROM rkmedis WHERE nama_pasien = '$nama_
 if($query) {
     echo "<script>alert('Data berhasil dihapus!'); window.location='rmedis.php';</script>";
 } else {
-    echo "<script>alert('Data gagal dihapus'); window.location='index.php';</script>";
+    echo "<script>alert('Data gagal dihapus'); window.location='rmedis.php';</script>";
 }
 
 ?>

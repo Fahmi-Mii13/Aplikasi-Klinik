@@ -26,42 +26,43 @@
     </header>
 
     <main class="container">
-        <h2>Data Pasien</h2>
+        <h2>Data Dokter</h2>
         <div style="overflow: auto;">
-            <a href="form_tambah.php" class="button">Tambah Data Baru </a>
+            <a href="form_tambah_dok.php" class="button">Tambah Data Baru </a>
 
 
             <table border="1" class="table">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>No Pasien</th>
-                        <th>Nama Pasien</th>
-                        <th>Jenis Kelamin</th>
+                        <th>No Dokter</th>
+                        <th>Nama Dokter</th>
+                        <th>Spesialis</th>
                         <th>Alamat</th>
                         <th>No Telp</th>
                         <th>Aksi</th>
                     </tr>
                     <?php
                     include "koneksi.php";
-                    $query = mysqli_query($koneksi, "SELECT * FROM pasien") or die(mysqli_error($koneksi));
+                    $query = mysqli_query($koneksi, "SELECT * FROM dokter") or die(mysqli_error($koneksi));
                     $nomor = 1;
                     while ($data = mysqli_fetch_array($query)) { ?>
                         <tr>
                             <td align="center"><?php echo $nomor++; ?>.</td>
-                            <td><?php echo $data['no_pasien']; ?></td>
-                            <td><?php echo $data['nama_pasien']; ?></td>
-                            <td><?php echo $data['jk']; ?></td>
+                            <td><?php echo $data['no_dokter']; ?></td>
+                            <td><?php echo $data['nama_dokter']; ?></td>
+                            <td><?php echo $data['spesialis']; ?></td>
                             <td><?php echo $data['alamat']; ?></td>
                             <td><?php echo $data['no_telp']; ?></td>
                             <td width="90px" align="center">
-                                <a href="form_edit.php?no_pasien=<?php echo $data['no_pasien']; ?>" class="button">Edit</a>
-                                <a href="proses_hapus.php?no_pasien=<?php echo $data['no_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button">Hapus</a>
+                                <a href="form_edit_dok.php?no_dokter=<?php echo $data['no_dokter']; ?>" class="button">Edit</a>
+                                <a href="proses_hapus_dok.php?no_dokter=<?php echo $data['no_dokter']; ?>" onclick="return confirm('Yakin hapus data?')" class="button">Hapus</a>
                             </td>
                         </tr>
                     <?php
                     } ?>
             </table>
+            <p style="color:red;">*Jika data dokter telah digunakan direkam medis maka data tersebut tidak dapat diedit/update</p>
         </div>
     </main>
 
