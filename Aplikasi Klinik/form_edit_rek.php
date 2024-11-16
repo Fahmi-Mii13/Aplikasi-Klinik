@@ -62,7 +62,7 @@
 			</tr>
 			<tr>
 				<td>Tanggal Kunjungan</td>
-				<td><input type="date" name="tgl_kunjung" value="<?php echo $data['tgl_kunjung'] ?>" required></td>
+				<td><input type="date" name="tgl_kunjung" value="<?php echo $data['tgl_kunjung'] ?>" class="selectt" required></td>
 			</tr>
 			<tr>
 				<td>Nama Dokter</td>
