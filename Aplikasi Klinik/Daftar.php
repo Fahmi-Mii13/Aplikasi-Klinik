@@ -58,6 +58,26 @@
             transition: .3s;
 
         }
+
+        input::placeholder {
+            color: white;
+        }
+
+        select {
+            width: 85%;
+            height: 15%;
+            color: #FFF;
+            border: 2px solid #00c4b3;
+            outline: #00c4b3 double;
+            padding: 12px 9px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            border-radius: 30px;
+            background: #0fd6c5;
+            outline: none;
+            transition: .3s;
+
+        }
     </style>
 </head>
 <?php
@@ -66,13 +86,19 @@ session_start();
 
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    $password = ($_POST['password']);
+    $nama_pasien = $_POST['nama_pasien'];
+    $jk = $_POST['jk'];
+    $umur = $_POST['umur'];
+    $alamat = $_POST['alamat'];
+    $no_telp = $_POST['no_telp'];
+    $hak_akses = 0;
 
-    $sql = "SELECT * FROM user WHERE username='$username'";
+    $sql = "SELECT * FROM pasien WHERE username='$username'";
     $result = mysqli_query($koneksi, $sql);
     if (!$result->num_rows > 0) {
-        $sql = "INSERT INTO user (username, password)
-                    VALUES ('$username', '$password')";
+        $sql = "INSERT INTO pasien (nama_pasien,username, password,jk,umur,alamat,no_telp,hak_akses)
+                    VALUES ('$nama_pasien','$username', '$password','$jk','$umur','$alamat','$no_telp',$hak_akses)";
         $result = mysqli_query($koneksi, $sql);
         if ($result) {
             echo "<script>alert('Selamat, registrasi berhasil!')</script>";
@@ -93,6 +119,15 @@ if (isset($_POST['submit'])) {
         <form action="" method="POST">
             <center>
                 <p style="font-size: 2rem; font-weight: 800;color:#00c4b3">Daftar Aplikasi Klinik</p>
+                <input type="text" placeholder="Nama Lengkap" name="nama_pasien" required><br><br>
+                <input type="number" placeholder="Umur" name="umur" required><br><br>
+                <select name="jk" id="jk">
+                    <option value="">Jenis Kelamin</option>
+                    <option value="laki-laki">Laki-Laki</option>
+                    <option value="perempuan">Perempuan</option>
+                </select>
+                <input type="text" placeholder="Nomor telp" name="no_telp" required><br><br>
+                <input type="text" placeholder="Alamat" name="alamat" required><br><br>
                 <input type="text" placeholder="Username" name="username" required><br><br>
                 <input type="password" placeholder="Password" name="password" required><br><br>
                 <center><button name="submit" class="btn">Daftar</button></center>

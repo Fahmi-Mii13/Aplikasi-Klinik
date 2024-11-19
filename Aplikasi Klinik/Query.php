@@ -13,7 +13,7 @@ include 'koneksi.php';
     $password = md5($_POST['password']);
 	
  
-    $query_sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
+    $query_sql = "SELECT * FROM pasien WHERE username = '$username' AND password = '$password'";
     $result = mysqli_query($koneksi, $query_sql);
 	if(mysqli_num_rows($result) > 0){
   		header("location:Beranda.php");

@@ -30,12 +30,16 @@
 				</td>
 			</tr>
 			<tr>
-				<td>No Pasien</td>
-				<td><input type="text" name="no_pasien" required></td>
-			</tr>
-			<tr>
 				<td>Nama Pasien</td>
 				<td><input type="text" name="nama_pasien" required></td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" required></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="text" name="password" required></td>
 			</tr>
 			<tr>
 				<td>Jenis Kelamin</td>
@@ -44,6 +48,11 @@
 					<input type="radio" name="jk" value="Perempuan" required>
 					<label for="alamat">Perempuan</label><br>
 				</td>
+			</tr>
+
+			<tr>
+				<td>Umur</td>
+				<td><input type="text" name="umur" required></td>
 			</tr>
 			<tr>
 				<td>Alamat</td>

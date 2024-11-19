@@ -20,7 +20,7 @@ if (!isset($_SESSION['username'])) {
 include 'koneksi.php';
 
 $username = $_SESSION['username'];
-$query = "SELECT * FROM user WHERE username = '$username'";
+$query = "SELECT * FROM pasien WHERE username = '$username'";
 $result = mysqli_query($koneksi, $query);
 
 if (!$result) {
@@ -51,7 +51,7 @@ $userData = mysqli_fetch_assoc($result);
     </center>
     <div class="profile">
         <center>
-            <h2>Selamat Datang, <?php echo ($userData['username']), "!"; ?></h2>
+            <h2>Selamat Datang, <?php echo ($userData['nama_pasien']), "!"; ?></h2>
         </center>
     </div>
 
@@ -70,14 +70,16 @@ $userData = mysqli_fetch_assoc($result);
                 </div>
                 <div class="specializations">
                     <div class="specialization">
-                        <img alt="Icon of Sp. Kandungan &amp; Kebidanan" height="60" src="image/Dokter.png" width="60" />
-                        <p href="kandungan.php">
-                            Sp. Kandungan &amp; Kebidanan
-                        </p>
+                        <a href="Kandungan.php">
+                            <img alt="Icon of Sp. Kandungan &amp; Kebidanan" height="60" src="image/Dokter.png" width="60" />
+                            <p>
+                                Sp. Kandungan &amp; Kebidanan
+                            </p>
+                        </a>
                     </div>
                     <div class="specialization">
                         <img alt="Icon of Sp. Kulit &amp; Kelamin" height="60" src="image/Dokter.png" width=" 60" />
-                        <p href="kulit.php">
+                        <p>
                             Sp. Kulit &amp; Kelamin
                         </p>
                     </div>

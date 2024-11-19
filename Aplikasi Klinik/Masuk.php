@@ -70,25 +70,35 @@ session_start();
 //     header("Location: Beranda.php");
 // }
 
+
+// $sql = "SELECT * FROM pasien WHERE username='$username' AND password='$password'";
+// $result = mysqli_query($koneksi, $sql);
+// if ($result->num_rows > 0) {
+//     $row = mysqli_fetch_assoc($result);
+//     $_SESSION['username'] = $row['username'];
+//     header("Location: Beranda.php");
+// } else {
+//     echo "<script>alert('Username atau password salah!')</script>";
+// }
+// }
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
 
-    $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
-    $result = mysqli_query($koneksi, $sql);
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['username'] = $row['username'];
-        header("Location: Beranda.php");
-    } else {
-        echo "<script>alert('Username atau password salah!')</script>";
-    }
+$query = mysqli_query($koneksi, "SELECT * FROM pasien WHERE username='$username' AND password='$password'") or die(mysqli_error($koneksi));
+if ($query->num_rows > 0) {
+    $row = mysqli_fetch_assoc($query);
+    $_SESSION['username'] = $row['username'];
+    header("Location: Beranda.php");
+} else {
+    echo "<script>alert('Username atau password salah!')</script>";
+}
 }
 ?>
 
 <body>
     <div class="container">
-        <form action="Query.php" method="POST">
+        <form action="" method="POST">
             <center>
                 <p style="font-size: 2rem; font-weight: 800;color:#00c4b3">Login Aplikasi Klinik</p>
                 <input type="text" placeholder="Username" name="username"><br><br>

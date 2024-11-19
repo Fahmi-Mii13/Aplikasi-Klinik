@@ -24,8 +24,8 @@
 
 		<?php
 		include "koneksi.php";
-		$no_pasien = $_GET['no_pasien'];
-		$query = mysqli_query($koneksi, "SELECT * FROM pasien WHERE no_pasien = '$no_pasien'") or die(mysqli_error($koneksi));
+		$nama_pasien = $_GET['nama_pasien'];
+		$query = mysqli_query($koneksi, "SELECT * FROM pasien WHERE nama_pasien = '$nama_pasien'") or die(mysqli_error($koneksi));
 		$data = mysqli_fetch_array($query);
 		?>
 		<table>
@@ -36,22 +36,29 @@
 					</center>
 				</td>
 			</tr>
-
-			<tr>
-				<td>No Pasien</td>
-				<td><input type="text" name="no_pasien" value="<?php echo $data['no_pasien'] ?>" required></td>
-			</tr>
 			<tr>
 				<td>Nama Pasien</td>
 				<td><input type="text" name="nama_pasien" value="<?php echo $data['nama_pasien'] ?>" required></td>
 			</tr>
 			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" value="<?php echo $data['username'] ?>" required></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="text" name="password" value="<?php echo $data['password'] ?>" required></td>
+			</tr>
+			<tr>
 				<td>Jenis Kelamin</td>
 				<td><input type="radio" name="jk" value="Laki-laki" required>
-					<label for="alamat">Laki-laki</label><br>
+					<label for="jk">Laki-laki</label><br>
 					<input type="radio" name="jk" value="Perempuan" required>
-					<label for="alamat">Perempuan</label><br>
+					<label for="jk">Perempuan</label><br>
 				</td>
+			</tr>
+			<tr>
+				<td>Umur</td>
+				<td><input type="text" name="umur" value="<?php echo $data['umur'] ?>" required></td>
 			</tr>
 			<tr>
 				<td>Alamat</td>

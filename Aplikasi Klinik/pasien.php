@@ -35,9 +35,11 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>No Pasien</th>
                         <th>Nama Pasien</th>
                         <th>Jenis Kelamin</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Umur</th>
                         <th>Alamat</th>
                         <th>No Telp</th>
                         <th>Aksi</th>
@@ -49,14 +51,16 @@
                     while ($data = mysqli_fetch_array($query)) { ?>
                         <tr>
                             <td align="center"><?php echo $nomor++; ?>.</td>
-                            <td><?php echo $data['no_pasien']; ?></td>
                             <td><?php echo $data['nama_pasien']; ?></td>
                             <td><?php echo $data['jk']; ?></td>
+                            <td><?php echo $data['username']; ?></td>
+                            <td><?php echo $data['password']; ?></td>
+                            <td><?php echo $data['umur']; ?></td>
                             <td><?php echo $data['alamat']; ?></td>
                             <td><?php echo $data['no_telp']; ?></td>
                             <td width="90px" align="center">
-                                <a href="form_edit.php?no_pasien=<?php echo $data['no_pasien']; ?>" class="button">Edit</a>
-                                <a href="proses_hapus.php?no_pasien=<?php echo $data['no_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button">Hapus</a>
+                                <a href="form_edit.php?nama_pasien=<?php echo $data['nama_pasien']; ?>" class="button">Edit</a>
+                                <a href="proses_hapus.php?nama_pasien=<?php echo $data['nama_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button">Hapus</a>
                             </td>
                         </tr>
                     <?php
