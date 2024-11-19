@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2024 at 11:14 AM
+-- Generation Time: Nov 19, 2024 at 08:28 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.23
 
@@ -50,20 +50,26 @@ INSERT INTO `dokter` (`no_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_tel
 --
 
 CREATE TABLE `pasien` (
-  `no_pasien` varchar(20) NOT NULL,
   `nama_pasien` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `jk` varchar(20) NOT NULL,
+  `umur` varchar(3) NOT NULL,
   `alamat` varchar(20) NOT NULL,
-  `no_telp` varchar(20) NOT NULL
+  `no_telp` varchar(20) NOT NULL,
+  `hak_akses` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pasien`
 --
 
-INSERT INTO `pasien` (`no_pasien`, `nama_pasien`, `jk`, `alamat`, `no_telp`) VALUES
-('2345', 'Fahmi', 'Laki-laki', 'Ciracas', '0989876543'),
-('4321', 'Budiman', 'Laki-laki', 'Jakarta', '123456789');
+INSERT INTO `pasien` (`nama_pasien`, `username`, `password`, `jk`, `umur`, `alamat`, `no_telp`, `hak_akses`) VALUES
+('Aldi', 'Aldi', 'aldi', 'Laki-laki', '18', 'Bumi', '081387278461', 0),
+('Budiman', '', '', 'Laki-laki', '', 'Jakarta', '123456789', 0),
+('Fahmi', '', '', 'Laki-laki', '', 'Ciracas', '0989876543', 0),
+('jeki', 'jeki', 'jeki', 'Laki-laki', '34', 'fefe', '7654321', 0),
+('test', 'test', 'test', 'laki-laki', '12', 'Jaka', '12', 0);
 
 -- --------------------------------------------------------
 
@@ -88,27 +94,6 @@ CREATE TABLE `rkmedis` (
 INSERT INTO `rkmedis` (`no_rek`, `nama_pasien`, `tgl_kunjung`, `nama_dokter`, `keluhan`, `diagnosis`, `terapi`) VALUES
 ('123', 'Fahmi', '2024-11-08', 'Kevin Risky Setiawan', 'Sakit', 'Sakit', 'Sakit');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `username` varchar(15) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `hak_akses` varchar(10) NOT NULL,
-  `aktif` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`username`, `password`, `hak_akses`, `aktif`) VALUES
-('Fahmi', 'f11d50d63d3891a44c332e46d6d7d561', '', 0),
-('irfan', '24b90bc48a67ac676228385a7c71a119', '', 0);
-
 --
 -- Indexes for dumped tables
 --
@@ -124,7 +109,6 @@ ALTER TABLE `dokter`
 -- Indexes for table `pasien`
 --
 ALTER TABLE `pasien`
-  ADD PRIMARY KEY (`no_pasien`),
   ADD UNIQUE KEY `nama_pasien` (`nama_pasien`);
 
 --
@@ -135,12 +119,6 @@ ALTER TABLE `rkmedis`
   ADD UNIQUE KEY `no_dokter` (`nama_dokter`),
   ADD UNIQUE KEY `nama_dokter` (`nama_dokter`),
   ADD KEY `k_pasien` (`nama_pasien`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
 
 --
 -- Constraints for dumped tables
