@@ -3,7 +3,6 @@
    }
 
    body {
-        overflow: scroll;
        font-family: 'Arial', sans-serif;
        margin: 0;
        padding: 0;
@@ -97,6 +96,7 @@
 
    main {
        padding: 20px;
+       padding-top: 20px;
    }
 
    section {
@@ -197,24 +197,35 @@
        font-size: 14px;
    }
 
-   .specializations {
-       display: flex;
-       justify-content: space-between;
-   }
 
-   .specialization {
-       text-align: center;
-       width: 100px;
-   }
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(196, 225, 255);
+}
 
-   .specialization img {
-       width: 60px;
-       height: 60px;
-       margin-bottom: 10px;
-   }
+.flex-container>div {
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 350px;
+    margin: 10px;
+    padding-top: 40px;
+    text-align: center;
+    line-height: 15px;
+    font-size: 20px;
+}
+.lihatsemua {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-   .specialization p {
-       margin: 0;
-       font-size: 14px;
-       color: #333;
-   }
+.lihatsemua:hover {
+    background: #0069d9;
+}
