@@ -71,7 +71,7 @@ $userData = mysqli_fetch_assoc($result);
                 <div class="specializations">
                     <div class="specialization">
                         <img alt="Icon of Sp. Kandungan &amp; Kebidanan" height="60" src="image/Dokter.png" width="60" />
-                        <p>
+                        <p href="kandungan.php">
                             Sp. Kandungan &amp; Kebidanan
                         </p>
                     </div>
