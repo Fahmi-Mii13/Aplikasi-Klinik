@@ -1,7 +1,8 @@
 **Update database dahulu!**
-LOGIN :
-ADMIN = user = test | pw = test
-Pasien = user = jeki | pw = jeki
+
+# LOGIN :
+ - ADMIN = user = test | pw = test
+ - Pasien = user = jeki | pw = jeki
 
 
 ![doge](https://github.com/user-attachments/assets/caa92c18-a642-4c83-b7f0-204a58093142)
