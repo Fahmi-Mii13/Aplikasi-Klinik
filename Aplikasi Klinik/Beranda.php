@@ -51,7 +51,7 @@ $userData = mysqli_fetch_assoc($result);
     </center>
     <div class="profile">
         <center>
-            <h2>Selamat Datang!, <?php echo ($userData['nama_pasien']), "!"; ?></h2>
+            <h2>Selamat Datang Wahai, <?php echo ($userData['nama_pasien']), "!"; ?></h2>
         </center>
     </div>
 
