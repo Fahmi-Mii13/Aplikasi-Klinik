@@ -7,7 +7,17 @@
     <title>Data Pasien - Klinik Simpel</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
+<?php
+session_start();
+if ($_SESSION['hak_akses']=="0") {
+echo "<script>
+    alert('Anda tidak memiliki hak akses')
+</script>";
+echo "<script>
+    window.location.replace('Beranda.php')
+</script>";
+}
+?>
 <body>
     <header>
         <div class="container">

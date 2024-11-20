@@ -19,6 +19,15 @@ if (!isset($_SESSION['username'])) {
 }
 include 'koneksi.php';
 
+$query1 = "SELECT * FROM pasien";
+$result1 = mysqli_query($koneksi, $query1);
+
+if (!$result1) {
+    die("Query gagal: " . mysqli_error($koneksi));
+}
+$data = mysqli_fetch_assoc($result1);
+
+
 $username = $_SESSION['username'];
 $query = "SELECT * FROM pasien WHERE username = '$username'";
 $result = mysqli_query($koneksi, $query);
@@ -40,10 +49,16 @@ $userData = mysqli_fetch_assoc($result);
                     <ul>
                         <li><a href="beranda.php">Beranda</a></li>
                         <li><a href="jadwal.php">Jadwal Dokter</a></li>
-                        <li><a href="pasien.php">Data Pasien</a></li>
-                        <li><a href="rmedis.php">Rekam Medis</a></li>
-                        <li><a href="dokter.php">Data Dokter</a></li>
-                        <li><a style="text-decoration:none;color: #0ae7ff;font-weight: bold;" href="logout.php" class="logout">Logout</a></li>
+                        <?php
+                        if ($userData['hak_akses'] == "1") {
+                            echo "
+                        <li><a href='pasien.php'>Data Pasien</a></li>
+                        <li><a href='rmedis.php'>Rekam Medis</a></li>
+                        <li><a href='dokter.php'>Data Dokter</a></li>
+                        ";
+                        }
+                        ?>
+                        <li><a style='text-decoration:none;color: #0ae7ff;font-weight: bold;' href='logout.php' class='logout'>Logout</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,7 +66,7 @@ $userData = mysqli_fetch_assoc($result);
     </center>
     <div class="profile">
         <center>
-            <h2>Selamat Datang, <?php echo ($userData['nama_pasien']), "!"; ?></h2>
+            <h2>Selamat Datang! <?php if ($userData['hak_akses'] == "1") { echo 'Admin'; }else echo'Pasien'; ?>, <?php echo ($userData['nama_pasien']), "!"; ?></h2>
         </center>
     </div>
 
@@ -87,50 +102,50 @@ $userData = mysqli_fetch_assoc($result);
                     </div>
                     <div class="specialization">
                         <a href="Spesialis/THT.php">
-                        <img alt="Icon of Sp. THT" height="60" src="image\LogoBer\DTht1.png" width="60" />
-                        <p>
-                            Sp. THT
-                        </p>
+                            <img alt="Icon of Sp. THT" height="60" src="image\LogoBer\DTht1.png" width="60" />
+                            <p>
+                                Sp. THT
+                            </p>
                         </a>
                     </div>
                     <div class="specialization">
                         <a href="Spesialis/Jiwa.php">
-                        <img alt="Icon of Sp. Jiwa" height="60" src="image\LogoBer\DJiwa1.png" width="60" />
-                        <p>
-                            Sp. Jiwa
-                        </p>
+                            <img alt="Icon of Sp. Jiwa" height="60" src="image\LogoBer\DJiwa1.png" width="60" />
+                            <p>
+                                Sp. Jiwa
+                            </p>
                         </a>
                     </div>
                     <div class="specialization">
                         <a href="Spesialis/PenyakitDlm.php">
-                        <img alt="Icon of Sp. Penyakit Dalam" height="60" src="image\LogoBer\Ddalem1.png" width="60" />
-                        <p>
-                            Sp. Penyakit Dalam
-                        </p>
+                            <img alt="Icon of Sp. Penyakit Dalam" height="60" src="image\LogoBer\Ddalem1.png" width="60" />
+                            <p>
+                                Sp. Penyakit Dalam
+                            </p>
                         </a>
                     </div>
                     <div class="specialization">
                         <a href="Spesialis/Anak.php">
-                        <img alt="Icon of Sp. Anak" height="60" src="image\LogoBer\DAnak1.png" width="60" />
-                        <p>
-                            Sp. Anak
-                        </p>
+                            <img alt="Icon of Sp. Anak" height="60" src="image\LogoBer\DAnak1.png" width="60" />
+                            <p>
+                                Sp. Anak
+                            </p>
                         </a>
                     </div>
                     <div class="specialization">
                         <a href="Spesialis/Mata.php">
-                        <img alt="Icon of Sp. Mata" height="60" src="image\LogoBer\DMata1.png" width="60" />
-                        <p>
-                            Sp. Mata
-                        </p>
+                            <img alt="Icon of Sp. Mata" height="60" src="image\LogoBer\DMata1.png" width="60" />
+                            <p>
+                                Sp. Mata
+                            </p>
                         </a>
                     </div>
                     <div class="specialization">
                         <a href="Spesialis/Gigi.php">
-                        <img alt="Icon of Dokter Gigi" height="60" src="image\LogoBer\DGigi1.png" width="60" />
-                        <p>
-                            Dokter Gigi
-                        </p>
+                            <img alt="Icon of Dokter Gigi" height="60" src="image\LogoBer\DGigi1.png" width="60" />
+                            <p>
+                                Dokter Gigi
+                            </p>
                         </a>
                     </div>
                 </div>

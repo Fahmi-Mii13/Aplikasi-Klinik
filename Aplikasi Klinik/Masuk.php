@@ -89,6 +89,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM pasien WHERE username='$username'
 if ($query->num_rows > 0) {
     $row = mysqli_fetch_assoc($query);
     $_SESSION['username'] = $row['username'];
+    $_SESSION['hak_akses'] = $row['hak_akses'];
     header("Location: Beranda.php");
 } else {
     echo "<script>alert('Username atau password salah!')</script>";
