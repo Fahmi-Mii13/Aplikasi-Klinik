@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2024 at 08:28 AM
+-- Generation Time: Nov 20, 2024 at 12:03 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.23
 
@@ -67,9 +67,9 @@ CREATE TABLE `pasien` (
 INSERT INTO `pasien` (`nama_pasien`, `username`, `password`, `jk`, `umur`, `alamat`, `no_telp`, `hak_akses`) VALUES
 ('Aldi', 'Aldi', 'aldi', 'Laki-laki', '18', 'Bumi', '081387278461', 0),
 ('Budiman', '', '', 'Laki-laki', '', 'Jakarta', '123456789', 0),
+('doni', 'test', 'test', 'laki-laki', '12', 'Jaka', '12', 1),
 ('Fahmi', '', '', 'Laki-laki', '', 'Ciracas', '0989876543', 0),
-('jeki', 'jeki', 'jeki', 'Laki-laki', '34', 'fefe', '7654321', 0),
-('test', 'test', 'test', 'laki-laki', '12', 'Jaka', '12', 0);
+('jeki', 'jeki', 'jeki', 'Laki-laki', '34', 'fefe', '7654321', 0);
 
 -- --------------------------------------------------------
 
