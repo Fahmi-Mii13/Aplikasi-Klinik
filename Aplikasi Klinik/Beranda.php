@@ -70,54 +70,68 @@ $userData = mysqli_fetch_assoc($result);
                 </div>
                 <div class="specializations">
                     <div class="specialization">
-                        <a href="Kandungan.php">
-                            <img alt="Icon of Sp. Kandungan &amp; Kebidanan" height="60" src="image/Dokter.png" width="60" />
+                        <a href="Spesialis/Kandungan.php">
+                            <img alt="Icon of Sp. Kandungan &amp; Kebidanan" height="60" src="image\LogoBer\DKandung1.png" width="60" />
                             <p>
                                 Sp. Kandungan &amp; Kebidanan
                             </p>
                         </a>
                     </div>
                     <div class="specialization">
-                        <img alt="Icon of Sp. Kulit &amp; Kelamin" height="60" src="image/Dokter.png" width=" 60" />
-                        <p>
-                            Sp. Kulit &amp; Kelamin
-                        </p>
+                        <a href="Spesialis/Kelamin.php">
+                            <img alt="Icon of Sp. Kulit &amp; Kelamin" height="60" src="image\LogoBer\DKulit1.png" width=" 60" />
+                            <p>
+                                Sp. Kulit &amp; Kelamin
+                            </p>
+                        </a>
                     </div>
                     <div class="specialization">
-                        <img alt="Icon of Sp. THT" height="60" src="image/Dokter.png" width="60" />
+                        <a href="Spesialis/THT.php">
+                        <img alt="Icon of Sp. THT" height="60" src="image\LogoBer\DTht1.png" width="60" />
                         <p>
                             Sp. THT
                         </p>
+                        </a>
                     </div>
                     <div class="specialization">
-                        <img alt="Icon of Sp. Jiwa" height="60" src="image/Dokter.png" width="60" />
+                        <a href="Spesialis/Jiwa.php">
+                        <img alt="Icon of Sp. Jiwa" height="60" src="image\LogoBer\DJiwa1.png" width="60" />
                         <p>
                             Sp. Jiwa
                         </p>
+                        </a>
                     </div>
                     <div class="specialization">
-                        <img alt="Icon of Sp. Penyakit Dalam" height="60" src="image/Dokter.png" width="60" />
+                        <a href="Spesialis/PenyakitDlm.php">
+                        <img alt="Icon of Sp. Penyakit Dalam" height="60" src="image\LogoBer\Ddalem1.png" width="60" />
                         <p>
                             Sp. Penyakit Dalam
                         </p>
+                        </a>
                     </div>
                     <div class="specialization">
-                        <img alt="Icon of Sp. Anak" height="60" src="image/Dokter.png" width="60" />
+                        <a href="Spesialis/Anak.php">
+                        <img alt="Icon of Sp. Anak" height="60" src="image\LogoBer\DAnak1.png" width="60" />
                         <p>
                             Sp. Anak
                         </p>
+                        </a>
                     </div>
                     <div class="specialization">
-                        <img alt="Icon of Sp. Mata" height="60" src="image/Dokter.png" width="60" />
+                        <a href="Spesialis/Mata.php">
+                        <img alt="Icon of Sp. Mata" height="60" src="image\LogoBer\DMata1.png" width="60" />
                         <p>
                             Sp. Mata
                         </p>
+                        </a>
                     </div>
                     <div class="specialization">
-                        <img alt="Icon of Dokter Gigi" height="60" src="image/Dokter.png" width="60" />
+                        <a href="Spesialis/Gigi.php">
+                        <img alt="Icon of Dokter Gigi" height="60" src="image\LogoBer\DGigi1.png" width="60" />
                         <p>
                             Dokter Gigi
                         </p>
+                        </a>
                     </div>
                 </div>
                 <br>
