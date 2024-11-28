@@ -40,6 +40,7 @@ if ($_SESSION['hak_akses'] == "0") {
         <h2>Data Pasien</h2>
         <div style="overflow: auto;">
             <a href="form_tambah.php" class="button">Tambah Data Baru </a>
+            <a href="pdf_pasien.php" class="button">Unduh PDF </a>
 
 
             <table border="1" class="table">
@@ -47,9 +48,8 @@ if ($_SESSION['hak_akses'] == "0") {
                     <tr>
                         <th>No</th>
                         <th>Nama Pasien</th>
-                        <th>Jenis Kelamin</th>
                         <th>Username</th>
-                        <th>Password</th>
+                        <th>Jenis Kelamin</th>
                         <th>Umur</th>
                         <th>Alamat</th>
                         <th>No Telp</th>
@@ -63,15 +63,14 @@ if ($_SESSION['hak_akses'] == "0") {
                         <tr>
                             <td align="center"><?php echo $nomor++; ?>.</td>
                             <td><?php echo $data['nama_pasien']; ?></td>
-                            <td><?php echo $data['jk']; ?></td>
                             <td><?php echo $data['username']; ?></td>
-                            <td><?php echo $data['password']; ?></td>
+                            <td><?php echo $data['jk']; ?></td>
                             <td><?php echo $data['umur']; ?></td>
                             <td><?php echo $data['alamat']; ?></td>
                             <td><?php echo $data['no_telp']; ?></td>
-                            <td width="90px" align="center">
-                                <a href="form_edit.php?nama_pasien=<?php echo $data['nama_pasien']; ?>" class="button">Edit</a>
-                                <a href="proses_hapus.php?nama_pasien=<?php echo $data['nama_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button">Hapus</a>
+                            <td style=" display: flex; justify-content: space-between; align-items: center; padding: 5px; gap: 5px;">
+                                 <a href="form_edit.php?nama_pasien=<?php echo $data['nama_pasien']; ?>" class="button" style="background-color: #007bff; padding: 5px 10px; text-decoration: none;">Edit</a>
+                                 <a href="proses_hapus.php?nama_pasien=<?php echo $data['nama_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button" style="background-color: #dc3545; padding: 5px 10px; text-decoration: none;">Hapus</a>
                             </td>
                         </tr>
                     <?php
