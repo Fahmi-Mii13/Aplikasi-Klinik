@@ -4,22 +4,30 @@ use Dompdf\Dompdf;
 
 $dompdf = new Dompdf();
 
+// Koneksi ke Database
 $server = "localhost";
 $user = "root";
 $pass = "";
 $database = "klinik";
- 
+
 $koneksi = mysqli_connect($server, $user, $pass, $database);
-$queryPasien = mysqli_query($koneksi, "SELECT * FROM pasien");
+
+$no_rek = isset($_GET['no_rek']) ? $_GET['no_rek'] : null;
+if (!$no_rek) {
+    die('Parameter no_rek tidak ditemukan!');
+}
+
+$queryPasien = mysqli_query($koneksi, "SELECT * FROM rkmedis WHERE no_rek = '$no_rek'");
 if (!$queryPasien) {
     die('Error: ' . mysqli_error($koneksi)); 
 }
+
 $content = '
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Data Pasien</title>
+    <title>Data Rekam Medis</title>
     <style>
         body {
             font-family: "Arial", sans-serif;
@@ -81,15 +89,18 @@ $content = '
         <h2>Klinik Simpel</h2>
         <p>Jl. Contoh No.123, Kota, Provinsi, 12345</p>
     </div>
-    <h2 class="title">Data Pasien</h2>
+    <h2 class="title">Data Rekam Medis Pasien</h2>
     <table>
         <thead>
             <tr>
                 <th>No</th>
+                <th>No Rekam</th>
                 <th>Nama Pasien</th>
-                <th>Jenis Kelamin</th>
-                <th>Alamat</th>
-                <th>No Telp</th>
+                <th>Tanggal Kunjungan</th>
+                <th>Nama Dokter</th>
+                <th>Keluhan</th>
+                <th>Diagnosis</th>
+                <th>Terapi</th>
             </tr>
         </thead>
         <tbody>';
@@ -99,10 +110,13 @@ while ($row = mysqli_fetch_assoc($queryPasien)) {
     $content .= '
             <tr>
                 <td style="text-align: center;">' . $nomor++ . '</td>
+                <td>' . htmlspecialchars($row['no_rek']) . '</td>
                 <td>' . htmlspecialchars($row['nama_pasien']) . '</td>
-                <td>' . htmlspecialchars($row['jk']) . '</td>
-                <td>' . htmlspecialchars($row['alamat']) . '</td>
-                <td>' . htmlspecialchars($row['no_telp']) . '</td>
+                <td>' . htmlspecialchars($row['tgl_kunjung']) . '</td>
+                <td>' . htmlspecialchars($row['nama_dokter']) . '</td>
+                <td>' . htmlspecialchars($row['keluhan']) . '</td>
+                <td>' . htmlspecialchars($row['diagnosis']) . '</td>
+                <td>' . htmlspecialchars($row['terapi']) . '</td>
             </tr>';
 }
 
@@ -117,8 +131,9 @@ $content .= '
 </html>';
 
 
+// Render PDF
 $dompdf->loadHtml($content);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
-$dompdf->stream("data_pasien.pdf", ["Attachment" => 1]);
+$dompdf->stream("data_pasien_{$no_rek}.pdf", ["Attachment" => 1]);
 ?>

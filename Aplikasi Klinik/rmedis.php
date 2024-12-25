@@ -58,31 +58,31 @@ if ($_SESSION['hak_akses'] == "0") {
                     <?php
                     include 'koneksi.php';
 
-
                     $sql = "SELECT * FROM rkmedis";
                     $result = $koneksi->query($sql);
 
                     if ($result->num_rows > 0) {
 
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["no_rek"] . "</td>";
-                            echo "<td>" . $row["nama_pasien"] . "</td>";
-                            echo "<td>" . $row["tgl_kunjung"] . "</td>";
-                            echo "<td>" . $row["nama_dokter"] . "</td>";
-                            echo "<td>" . $row["keluhan"] . "</td>";
-                            echo "<td>" . $row["diagnosis"] . "</td>";
-                            echo "<td>" . $row["terapi"] . "</td>";
-                            echo "<td width='90px' align='center'>";
-                            echo "<a href='form_edit_rek.php?nama_pasien=" . $row['nama_pasien'] . "' class='button'>Edit</a> ";
-                            echo "<a href='proses_hapus_rek.php?nama_pasien=" . $row['nama_pasien'] . "' onclick='return confirm(\"Yakin hapus data?\")' class='button'>Hapus</a>";
-                            echo "</td>";
-                            echo "</tr>";
+                        while ($row = $result->fetch_assoc()) { ?>
+                            <tr>
+                                <td><?php echo $row['no_rek']; ?></td>
+                                <td><?php echo $row['nama_pasien']; ?></td>
+                                <td><?php echo $row['tgl_kunjung']; ?></td>
+                                <td><?php echo $row['nama_dokter']; ?></td>
+                                <td><?php echo $row['keluhan']; ?></td>
+                                <td><?php echo $row['diagnosis']; ?></td>
+                                <td><?php echo $row['terapi']; ?></td>
+                                <td style=" display: flex; justify-content: space-between; align-items: center; padding: 5px; gap: 5px;">
+                                    <a href="form_edit_rek.php?nama_pasien=<?php echo $row['nama_pasien']; ?>" class="button" style="background-color: #007bff; padding: 5px 10px; text-decoration: none;">Edit</a>
+                                    <a href="detail_pasien.php?no_rek=<?php echo $row['no_rek']; ?>" class="button" style="background-color: #007bff; padding: 5px 10px; text-decoration: none;">Detail</a>
+                                    <a href="proses_hapus_rek.php?nama_pasien=<?php echo $row['nama_pasien']; ?>" onclick="return confirm('Yakin hapus data?')" class="button" style="background-color: #dc3545; padding: 5px 10px; text-decoration: none;">Hapus</a>
+                                </td>
+                            </tr>
+                        <?php
                         }
                     } else {
                         echo "<tr><td colspan='6'>Tidak ada data rekam medis</td></tr>";
-                    }
-
+                    } 
                     $koneksi->close();
                     ?>
                 </tbody>
