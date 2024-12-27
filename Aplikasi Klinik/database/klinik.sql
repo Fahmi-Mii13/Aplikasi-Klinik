@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2024 at 12:03 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.0.23
+-- Generation Time: Dec 27, 2024 at 01:02 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `nama` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `nomor` int(20) NOT NULL,
+  `pesan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`nama`, `email`, `nomor`, `pesan`) VALUES
+('Haris Ganteng 200507', 'harisewewe@gmail.com', 2147483647, 'ppppppppppppp'),
+('Haris Ganteng 200507', 'haris@ewewe.gmail.com', 2147483647, '1ppppppppp'),
+('Haris Ganteng 200507', 'haris@ewewe.gmail.com', 2147483647, '1ppppppppp'),
+('Haris Ganteng 200507', 'haris@ewewe.gmail.com', 2147483647, '1ppppppppp'),
+('Haris Ganteng 200507', 'haris@ewewe.gmail.com', 2147483647, '1ppppppppp');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dokter`
 --
 
@@ -33,7 +57,7 @@ CREATE TABLE `dokter` (
   `spesialis` varchar(20) NOT NULL,
   `alamat` varchar(20) NOT NULL,
   `no_telp` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `dokter`
@@ -58,7 +82,7 @@ CREATE TABLE `pasien` (
   `alamat` varchar(20) NOT NULL,
   `no_telp` varchar(20) NOT NULL,
   `hak_akses` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pasien`
@@ -67,9 +91,9 @@ CREATE TABLE `pasien` (
 INSERT INTO `pasien` (`nama_pasien`, `username`, `password`, `jk`, `umur`, `alamat`, `no_telp`, `hak_akses`) VALUES
 ('Aldi', 'Aldi', 'aldi', 'Laki-laki', '18', 'Bumi', '081387278461', 0),
 ('Budiman', '', '', 'Laki-laki', '', 'Jakarta', '123456789', 0),
-('doni', 'test', 'test', 'laki-laki', '12', 'Jaka', '12', 1),
 ('Fahmi', '', '', 'Laki-laki', '', 'Ciracas', '0989876543', 0),
-('jeki', 'jeki', 'jeki', 'Laki-laki', '34', 'fefe', '7654321', 0);
+('jeki', 'jeki', 'jeki', 'Laki-laki', '34', 'fefe', '7654321', 0),
+('test', 'test', 'test', 'laki-laki', '12', 'Jaka', '12', 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +109,7 @@ CREATE TABLE `rkmedis` (
   `keluhan` varchar(50) NOT NULL,
   `diagnosis` varchar(50) NOT NULL,
   `terapi` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `rkmedis`
