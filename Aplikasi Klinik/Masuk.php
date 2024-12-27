@@ -4,67 +4,20 @@
 <head>
     <meta charset="utf-8">
     <title>Login Klinik</title>
-    <style>
-        body {
-            width: 190vh;
-            min-height: 90vh;
-            background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("image/Klinik08.webp");
-            background-position: center;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            width: 400px;
-            min-height: 400px;
-            background-color: rgba(212, 255, 251, 0.8);
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-        }
-
-        .btn {
-            display: block;
-            width: 40%;
-            padding: 10px 10px;
-            text-align: center;
-            border: none;
-            background: #00c4b3;
-            outline: #00c4b3 double;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            color: #FFF;
-            cursor: pointer;
-            transition: .3s;
-        }
-
-        input::placeholder {
-            color: white;
-        }
-
-        input {
-            width: 80%;
-            height: 20%;
-            color: #FFF;
-            border: 2px solid #00c4b3;
-            outline: #00c4b3 double;
-            padding: 13px 10px;
-            font-size: 1rem;
-            border-radius: 30px;
-            background: #0fd6c5;
-            outline: none;
-            transition: .3s;
-
-        }
-    </style>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/masuk.css">
 </head>
 <?php
 
+session_start();
 include 'koneksi.php';
 
-session_start();
 
 // if (!isset($_SESSION['username'])) {
 //     header("Location: Beranda.php");
@@ -85,19 +38,33 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-$query = mysqli_query($koneksi, "SELECT * FROM pasien WHERE username='$username' AND password='$password'") or die(mysqli_error($koneksi));
-if ($query->num_rows > 0) {
-    $row = mysqli_fetch_assoc($query);
-    $_SESSION['username'] = $row['username'];
-    $_SESSION['hak_akses'] = $row['hak_akses'];
-    header("Location: Beranda.php");
-} else {
-    echo "<script>alert('Username atau password salah!')</script>";
-}
+    $query = mysqli_query($koneksi, "SELECT * FROM pasien WHERE username='$username' AND password='$password'") or die(mysqli_error($koneksi));
+    if ($query->num_rows > 0) {
+        $row = mysqli_fetch_assoc($query);
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['hak_akses'] = $row['hak_akses'];
+        header("Location: Beranda.php");
+    } else {
+        echo "<script>alert('Username atau password salah!')</script>";
+    }
 }
 ?>
 
 <body>
+
+    <nav class="navbar">
+        <a href="index.php" class="navbar-logo">Klinik<span>Gaspol</span></a>
+        <div class="navbar-nav">
+            <a href="index.php">Beranda</a>
+            <a href="Masuk.php">Login</a>
+            <a href="contact.php">Contact Us</a>
+        </div>
+        <div class="navbar-extra">
+            <a href="Masuk.php" id="search"><i data-feather="arrow-right"></i></a>
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+
     <div class="container">
         <form action="" method="POST">
             <center>
@@ -112,6 +79,12 @@ if ($query->num_rows > 0) {
 
         </form>
     </div>
+    <!-- Feather Icons -->
+    <script>
+        feather.replace();
+    </script>
+    <!-- My Java script-->
+    <script src="JS/script.js"></script>
 </body>
 
 </html>

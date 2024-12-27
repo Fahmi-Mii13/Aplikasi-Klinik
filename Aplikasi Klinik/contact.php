@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <!-- My Style -->
     <link rel="stylesheet" href="css/contact.css">
 </head>
+
 <body>
     <!-- Navbar start -->
     <nav class="navbar">
@@ -40,7 +42,7 @@
             <div class="content">
                 <!-- <h3>Our product advantages</h3> -->
                 <p>
-This hospital was founded on January 1 2024 and we will always dedicate the best service to all customers.</p>
+                    This hospital was founded on January 1 2024 and we will always dedicate the best service to all customers.</p>
                 <p>At this hospital we have 500+ rooms with Economy, VIP and priority classes. Equipped with various advanced equipment and accompanied by 41 specialist doctors, 57 general doctors and 112 nuns who are always ready and ready to serve.</p>
             </div>
         </div>
@@ -53,31 +55,35 @@ This hospital was founded on January 1 2024 and we will always dedicate the best
         <p>
             Contact us if you encounter any issues while creating an account for the "Klinik Gaspol" application or have other application-related problems. We are continuously working to improve our services for your comfort and recovery!
         </p>
-        <div class="row">
-            <!-- Google Map -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.288133389175!2d106.78483131215235!3d-6.244737666101872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f113a09c5925%3A0xfae2c8f99ae07f0f!2sKramat%20Pela%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1723027576915!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+        <center>
+            <div class="row">
+                <!-- Google Map -->
+                <center>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.288133389175!2d106.78483131215235!3d-6.244737666101872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f113a09c5925%3A0xfae2c8f99ae07f0f!2sKramat%20Pela%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1723027576915!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map" style="min-width: 600px;"></iframe>
 
-            <!-- Contact Form -->
-            <form action="contact.php" method="POST">
-                <div class="input-group">
-                    <i data-feather="user"></i>
-                    <input type="text" name="name" placeholder="Name" required>
-                </div>
-                <div class="input-group">
-                    <i data-feather="mail"></i>
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="input-group">
-                    <i data-feather="phone"></i>
-                    <input type="text" name="number" placeholder="Number Phone" required>
-                </div>
-                <div class="input-group">
-                    <i data-feather="message-square"></i>
-                    <textarea name="message" placeholder="Type your message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send</button>
-            </form>
-        </div>
+                    <!-- Contact Form -->
+                    <form action="contact.php" method="POST">
+                        <div class="input-group">
+                            <i data-feather="user"></i>
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="input-group">
+                            <i data-feather="mail"></i>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="input-group">
+                            <i data-feather="phone"></i>
+                            <input type="text" name="number" placeholder="Number Phone" required>
+                        </div>
+                        <div class="input-group">
+                            <i data-feather="message-square"></i>
+                            <textarea name="message" placeholder="Type your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </center>
+            </div>
+        </center>
     </section>
     <!-- Contact Section end -->
 
@@ -108,6 +114,7 @@ This hospital was founded on January 1 2024 and we will always dedicate the best
     <!-- My Java script-->
     <script src="JS/script.js"></script>
 </body>
+
 </html>
 
 <?php
