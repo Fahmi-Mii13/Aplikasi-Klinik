@@ -1,0 +1,134 @@
+body {
+    width: 190vh;
+    min-height: 90vh;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../image/Klinik08.webp");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    min-height: 400px;
+    background-color: rgba(212, 255, 251, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.btn {
+    display: block;
+    width: 40%;
+    padding: 10px 10px;
+    text-align: center;
+    border: none;
+    background: #00c4b3;
+    outline: #00c4b3 double;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}
+
+input::placeholder {
+    color: white;
+}
+
+input {
+    width: 80%;
+    height: 20%;
+    color: #FFF;
+    border: 2px solid #00c4b3;
+    outline: #00c4b3 double;
+    padding: 13px 10px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: #0fd6c5;
+    outline: none;
+    transition: .3s;
+
+}
+
+
+/* Navbar */
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: rgba(0, 200, 250, 0.8);
+    border-bottom: 1px #c29958;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(240, 209, 160);
+    font-style: italic;
+
+}
+
+.navbar .navbar-logo span {
+    color: #fff;
+}
+
+.navbar .navbar-nav a {
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    min-width: 50px;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
+
+/* biar kalo di arahin berubah warna*/
+.navbar .navbar-nav a:hover {
+    color: var(--bg)
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+    color: #fff;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--bg);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+/*Mobile Phone*/
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
+

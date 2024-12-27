@@ -185,8 +185,7 @@ color: var(--bg);
     flex-direction: column;
     align-items: center; 
     justify-content: center;
-    width: 50%; /* Sesuaikan ukuran */
-    max-width: 600px; /* Maksimal lebar form */
+    width: 60%; /* Sesuaikan ukuran */
     background-color: #acacac70;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow hitam */
@@ -201,15 +200,27 @@ color: var(--bg);
     justify-content: left;
 }
 
-.contact .row form .input-group input,
+.contact .row form .input-group input{
+    width: 100%;
+        /* Lebar penuh dalam form */
+        height: 40px;
+        padding: 1.5rem;
+        font-size: 1.4rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+        outline: none;
+}
 .contact .row form .input-group textarea {
     width: 100%; /* Lebar penuh dalam form */
+    min-height: 100px;
     padding: 1.5rem;
     font-size: 1.4rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 1.5rem;
     outline: none;
+    resize: none;
 }
 
 /* Tombol Kirim */
