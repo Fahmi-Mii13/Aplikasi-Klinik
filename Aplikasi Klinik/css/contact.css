@@ -1,0 +1,381 @@
+:root {
+    --primary: #4cdfb3;
+    --bg: #3187f8;
+
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: rgba(0, 200, 250, 0.8);
+    border-bottom: 1px #c29958 ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.navbar .navbar-logo{
+    font-size: 2rem;
+    font-weight: 700;
+    color:rgb(240, 209, 160);
+    font-style: italic;
+
+}
+.navbar .navbar-logo span{
+    color: #fff;
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    min-width: 50px;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
+/* biar kalo di arahin berubah warna*/.navbar .navbar-nav a:hover{
+    color: var(--bg)
+}
+
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a{
+    color: #fff;
+    margin: 0 0.5rem;
+}
+.navbar .navbar-extra a:hover{
+color: var(--bg);
+}
+
+#hamburger-menu{
+    display: none;
+}
+
+/* About Section */
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    margin-top: 5rem; /* Memberi jarak dari navbar */
+}
+
+.about h2,
+.contact h2{
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+}
+
+.about h2 span,
+.contact h2 span{
+    color: var(--primary);
+}
+    
+.about .row{
+    display: flex;
+}
+
+.about .row .about-img{
+    flex: 1 1 45rem;
+
+}
+
+.about .row .about-img img{
+    width: 100%;
+
+}
+
+.about .row .content{
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+
+}
+
+.about .row .content p{
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+    list-style: 1.6;
+}
+
+.about .row .about-img img {
+    width: 100%; /* Membuat gambar mengambil lebar penuh elemen */
+    max-width: 400px; /* Ukuran maksimal */
+    height: auto; /* Menjaga rasio aspek gambar */
+    display: block;
+    margin: auto;
+    border-radius: 10px; /* Menambahkan efek rounded */
+}
+
+.about .row .content{
+    padding: 0;
+}
+
+.about .row .content h3{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.about .row .content p{
+    font-size: 1.3rem
+} 
+/* Contact Section */
+/* Container utama */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 2rem;
+    gap: 2rem;
+    margin-top: 5rem; /* Memberi jarak dari navbar */
+}
+
+/* Styling untuk form */
+.contact p{
+    text-align: center;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+    list-style: 1.6;
+
+}
+.contact .row {
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 50%; /* Sesuaikan ukuran */
+    max-width: 600px; /* Maksimal lebar form */
+    background-color: #acacac70;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow hitam */
+    padding: 2rem;
+  
+}
+
+/* Form input */
+.contact .row form .input-group {
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: left;
+}
+
+.contact .row form .input-group input,
+.contact .row form .input-group textarea {
+    width: 100%; /* Lebar penuh dalam form */
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    outline: none;
+}
+
+/* Tombol Kirim */
+.contact .row .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contact .row .btn:hover {
+    background-color: #0073e6; 
+}
+
+/* Styling untuk map */
+.contact .map {
+    width: 100%;
+    max-width: 800px; /* Ukuran maksimum */
+    height: 300px; /* Tinggi peta */
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Footer */
+footer{
+    background-color: rgba(0, 200, 250, 0.8);
+    text-align: center;
+    padding: 1rem 0.3rem;
+    margin-top: 3rem;
+}
+
+footer .social{
+    padding: 1rem 0;
+}
+
+footer .social a{
+    color: #fff;
+    margin: 1rem;
+}
+
+footer .social a:hover,
+footer .links a:hover,
+footer .credit a:hover{
+    color: var(--bg);
+}
+
+footer .links{
+    margin-bottom: 1.4rem;
+}
+footer .links a{
+    color: #fff;
+    padding: 0.7rem 1rem;
+
+}
+
+footer .credit {
+    font-size: 0.8rem;
+
+}
+
+footer .credit a{
+    color: var(--bg);
+    font-size: medium;
+    font-weight: 700;
+}
+/* Medua Queries */
+
+/*Laptop */
+@media (max-width: 1366px){
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 758px){
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.5s;
+
+    }
+   
+.navbar .navbar-nav.active{
+    right: 0;
+}
+ .navbar .navbar-nav a{
+    color: var(--primary);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5;
+    font-size: 1.5rem;
+ }
+ 
+ .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+
+ }
+
+ .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+
+ }
+ .about .row{
+    flex-wrap: wrap;
+ }
+ .about .row .about-img img{
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about .row .content{
+    padding: 0;
+}
+
+.about .row .content h3{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.about .row .content p{
+    font-size: 1.3rem
+ 
+ 
+}
+
+.menu p{
+    font-size: 1.2rem;
+}
+
+.contact .row{
+    flex-wrap: wrap;
+}
+
+.contact .row .map{
+height: 30rem;
+}
+
+.contact .row form{
+    padding-top: 0;
+
+}
+}
+/*Mobile Phone*/
+@media (max-width: 450px){
+    html {
+        font-size: 55%;
+    }
+}
+
+/* End Section */
